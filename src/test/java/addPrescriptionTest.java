@@ -15,9 +15,10 @@ public class addPrescriptionTest {
     // Optometrist = 12345678 (test minimum 8 characters)
     //
     // Prescription default:
-    Prescription prescription = new Prescription("1234", "123456789012345",
-            "12345678901234567890",
-            -20.00, -4.00, 0, "21/10/25", "12345678");
+    //    Prescription prescription = new Prescription("1234",
+    //    "123456789012345",
+    //            "12345678901234567890",
+    //            -20.00, -4.00, 0, "21/10/25", "12345678");
 
     @Test
     public void addPrescriptionTestNameTooShort() {
