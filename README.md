@@ -1,5 +1,9 @@
-The main java file is under the following path:
-src/main/java/org/eyeclear/Prescription.java
+## Source Code
 
-The unit test files are under the following path:
-src/test/java/...
+[Prescription.java](https://github.com/JershonLow/Eyeclear/blob/master/src/main/java/org/eyeclear/Prescription.java)
+
+## Unit Tests
+
+[addPrescriptionTest.java](https://github.com/JershonLow/Eyeclear/blob/master/src/test/java/addPrescriptionTest.java)
+
+[addRemarkTest.java](https://github.com/JershonLow/Eyeclear/blob/master/src/test/java/addRemarkTest.java)
