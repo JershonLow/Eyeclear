@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 public class addRemarkTest {
     // Default prescription
     //    Prescription prescription = new Prescription("addRemarkTest",
-    //    "[name of test]]",
+    //    "[name of test]",
     //            "12345678901234567890",
     //            -20.00, -4.00, 0, "21/10/25", "12345678");
 
@@ -77,11 +77,11 @@ public class addRemarkTest {
                 -20.00, -4.00, 0, "21/10/25", "12345678");
 
         // False, should be "optometrist"
-        assertFalse(prescription.addRemark("one two three four five six",
+        assertFalse(prescription.addRemark("One two three four five six",
                 "Optometrist"));
 
         // True
-        assertFalse(prescription.addRemark("one two three four five six",
+        assertTrue(prescription.addRemark("One two three four five six",
                 "optometrist"));
     }
 
@@ -93,11 +93,11 @@ public class addRemarkTest {
                 -20.00, -4.00, 0, "21/10/25", "12345678");
 
         // False, should be "client"
-        assertFalse(prescription.addRemark("one two three four five six",
+        assertFalse(prescription.addRemark("One two three four five six",
                 "Client"));
 
         // True
-        assertFalse(prescription.addRemark("one two three four five six",
+        assertTrue(prescription.addRemark("One two three four five six",
                 "client"));
     }
 

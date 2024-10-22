@@ -22,7 +22,7 @@ public class addPrescriptionTest {
 
     // Testing first name
     @Test
-    public void addPrescriptionTestNameTooShort() {
+    public void addPrescriptionTestFirstName() {
         // False, first name is too short
         Prescription prescription1 = new Prescription("123", "123456789012345"
                 , "12345678901234567890", -20.00, -4.00
