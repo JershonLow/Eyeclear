@@ -53,25 +53,25 @@ public class addPrescriptionTest {
     @Test
     public void addPrescriptionTestLastName() {
         // False, last name is too short
-        Prescription prescription1 = new Prescription("123",
-                "1234567890123456"
+        Prescription prescription1 = new Prescription("1234",
+                "123"
                 , "12345678901234567890", -20.00, -4.00
                 , 0, "21/10/25", "12345678");
 
         // False, last name is too long
-        Prescription prescription2 = new Prescription("1234567890123456",
+        Prescription prescription2 = new Prescription("1234",
                 "1234567890123456"
                 , "12345678901234567890", -20.00, -4.00
                 , 0, "21/10/25", "12345678");
 
 
         // True, testing first name and last name boundary
-        Prescription prescription3 = new Prescription("123456789012345", "1234"
+        Prescription prescription3 = new Prescription("1234", "1234"
                 , "12345678901234567890", -20.00, -4.00
                 , 0, "21/10/25", "12345678");
 
         // True, testing first name and last name boundary
-        Prescription prescription4 = new Prescription("123456789012345",
+        Prescription prescription4 = new Prescription("1234",
                 "123456789012345"
                 , "12345678901234567890", -20.00, -4.00
                 , 0, "21/10/25", "12345678");
