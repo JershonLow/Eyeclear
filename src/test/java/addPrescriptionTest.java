@@ -15,11 +15,12 @@ public class addPrescriptionTest {
     // Optometrist = 12345678 (test minimum 8 characters)
     //
     // Prescription default:
-    //    Prescription prescription = new Prescription("1234",
-    //    "123456789012345",
+    //    Prescription prescription = new Prescription("addPrescription",
+    //    "[name of test]",
     //            "12345678901234567890",
     //            -20.00, -4.00, 0, "21/10/25", "12345678");
 
+    // Testing first name
     @Test
     public void addPrescriptionTestNameTooShort() {
         // False, first name is too short
@@ -50,6 +51,7 @@ public class addPrescriptionTest {
         assertTrue(prescription4.addPrescription());
     }
 
+    // Testing last name
     @Test
     public void addPrescriptionTestLastName() {
         // False, last name is too short
@@ -82,47 +84,49 @@ public class addPrescriptionTest {
         assertTrue(prescription4.addPrescription());
     }
 
+    // Testing address
     @Test
     public void addPrescriptionTestAddress() {
         // False, address is too short
-        Prescription prescription1 = new Prescription("1234",
-                "123456789012345", "1234567890123456789",
+        Prescription prescription1 = new Prescription("addPrescription",
+                "TestAddress1", "1234567890123456789",
                 -20.00, -4.00, 0, "21/10/25", "12345678");
 
         // True
-        Prescription prescription2 = new Prescription("1234",
-                "123456789012345", "12345678901234567890",
+        Prescription prescription2 = new Prescription("addPrescription",
+                "TestAddress2", "12345678901234567890",
                 -20.00, -4.00, 0, "21/10/25", "12345678");
 
         assertFalse(prescription1.addPrescription());
         assertTrue(prescription2.addPrescription());
     }
 
+    // Testing sphere
     @Test
     public void addPrescriptionTestSphere() {
         // False, sphere exceeds -20.00
-        Prescription prescription1 = new Prescription("1234",
-                "123456789012345", "12345678901234567890", -20.001, -4.00, 0,
+        Prescription prescription1 = new Prescription("addPrescription",
+                "TestSphere1", "12345678901234567890", -20.001, -4.00, 0,
                 "21/10/25", "12345678");
 
         // False, sphere exceeds 20.00
-        Prescription prescription2 = new Prescription("1234",
-                "123456789012345", "12345678901234567890", 20.001, -4.00, 0,
+        Prescription prescription2 = new Prescription("addPrescription",
+                "TestSphere2", "12345678901234567890", 20.001, -4.00, 0,
                 "21/10/25", "12345678");
 
         // True, sphere is within limits
-        Prescription prescription3 = new Prescription("1234",
-                "123456789012345", "12345678901234567890", -19.999, -4.00, 0,
+        Prescription prescription3 = new Prescription("addPrescription",
+                "TestSphere3", "12345678901234567890", -19.999, -4.00, 0,
                 "21/10/25", "12345678");
 
         // True, sphere is within limits
-        Prescription prescription4 = new Prescription("1234",
-                "123456789012345", "12345678901234567890", 19.999, -4.00, 0,
+        Prescription prescription4 = new Prescription("addPrescription",
+                "TestSphere4", "12345678901234567890", 19.999, -4.00, 0,
                 "21/10/25", "12345678");
 
         // True, sphere is within limits
-        Prescription prescription5 = new Prescription("1234",
-                "123456789012345", "12345678901234567890", 0, -4.00, 0,
+        Prescription prescription5 = new Prescription("addPrescription",
+                "TestSphere5", "12345678901234567890", 0, -4.00, 0,
                 "21/10/25", "12345678");
 
         assertFalse(prescription1.addPrescription());
@@ -132,31 +136,32 @@ public class addPrescriptionTest {
         assertTrue(prescription5.addPrescription());
     }
 
+    // Testing cylinder
     @Test
     public void addPrescriptionTestCylinder() {
         // False, cylinder exceeds -4.00
-        Prescription prescription1 = new Prescription("1234",
-                "123456789012345", "12345678901234567890",
+        Prescription prescription1 = new Prescription("addPrescription",
+                "TestCylinder1", "12345678901234567890",
                 -20.00, -4.001, 0, "21/10/25", "12345678");
 
         // False, cylinder exceeds 4.00
-        Prescription prescription2 = new Prescription("1234",
-                "123456789012345", "12345678901234567890",
+        Prescription prescription2 = new Prescription("addPrescription",
+                "TestCylinder2", "12345678901234567890",
                 -20.00, 4.001, 0, "21/10/25", "12345678");
 
         // True, cylinder is within limits
-        Prescription prescription3 = new Prescription("1234",
-                "123456789012345", "12345678901234567890",
+        Prescription prescription3 = new Prescription("addPrescription",
+                "TestCylinder3", "12345678901234567890",
                 -20.00, -3.99, 0, "21/10/25", "12345678");
 
         // True, cylinder is within limits
-        Prescription prescription4 = new Prescription("1234",
-                "123456789012345", "12345678901234567890",
+        Prescription prescription4 = new Prescription("addPrescription",
+                "TestCylinder4", "12345678901234567890",
                 -20.00, 3.99, 0, "21/10/25", "12345678");
 
         // True, cylinder is within limits
-        Prescription prescription5 = new Prescription("1234",
-                "123456789012345", "12345678901234567890",
+        Prescription prescription5 = new Prescription("addPrescription",
+                "TestCylinder5", "12345678901234567890",
                 -20.00, 0, 0, "21/10/25", "12345678");
 
         assertFalse(prescription1.addPrescription());
@@ -166,30 +171,36 @@ public class addPrescriptionTest {
         assertTrue(prescription5.addPrescription());
     }
 
+    // Testing axis
     @Test
     public void addPrescriptionTestAxis() {
         // False, axis exceeds 0
-        Prescription prescription1 = new Prescription("1234", "123456789012345",
+        Prescription prescription1 = new Prescription("addPrescription",
+                "TestAxis1",
                 "12345678901234567890",
                 -20.00, -4.00, -0.001, "21/10/25", "12345678");
 
         // False, axis exceeds 180
-        Prescription prescription2 = new Prescription("1234", "123456789012345",
+        Prescription prescription2 = new Prescription("addPrescription",
+                "TestAxis2",
                 "12345678901234567890",
                 -20.00, -4.00, 180.01, "21/10/25", "12345678");
 
         // True, axis is within limits
-        Prescription prescription3 = new Prescription("1234", "123456789012345",
+        Prescription prescription3 = new Prescription("addPrescription",
+                "TestAxis3",
                 "12345678901234567890",
                 -20.00, -4.00, 0, "21/10/25", "12345678");
 
         // True, axis is within limits
-        Prescription prescription4 = new Prescription("1234", "123456789012345",
+        Prescription prescription4 = new Prescription("addPrescription",
+                "TestAxis4",
                 "12345678901234567890",
                 -20.00, -4.00, 180, "21/10/25", "12345678");
 
         // True, axis is within limits
-        Prescription prescription5 = new Prescription("1234", "123456789012345",
+        Prescription prescription5 = new Prescription("addPrescription",
+                "TestAxis5",
                 "12345678901234567890",
                 -20.00, -4.00, 90, "21/10/25", "12345678");
 
@@ -200,32 +211,38 @@ public class addPrescriptionTest {
         assertTrue(prescription5.addPrescription());
     }
 
+    // Testing date
     @Test
     public void addPrescriptionTestDate() {
-        // False, day cannot start with 00
-        Prescription prescription1 = new Prescription("1234", "123456789012345",
+        // False, day cannot start with 0
+        Prescription prescription1 = new Prescription("addPrescription",
+                "TestDate1",
                 "12345678901234567890",
-                -20.00, -4.00, 0, "00/13/25", "12345678");
+                -20.00, -4.00, 0, "00/01/25", "12345678");
 
-        // False, date cannot exceed either 30, 31
-        Prescription prescription2 = new Prescription("1234", "123456789012345",
+        // False, date cannot exceed either 30, 31 depending on the month
+        Prescription prescription2 = new Prescription("addPrescription",
+                "TestDate2",
                 "12345678901234567890",
-                -20.00, -4.00, 0, "35/1/25", "12345678");
+                -20.00, -4.00, 0, "32/01/25", "12345678");
 
-        // False, year must be 2 digits
-        Prescription prescription3 = new Prescription("1234", "123456789012345",
+        // False, month cannot exceed 12
+        Prescription prescription3 = new Prescription("addPrescription",
+                "TestDate3",
                 "12345678901234567890",
-                -20.00, -4.00, 0, "35/1/254", "12345678");
+                -20.00, -4.00, 0, "01/13/25", "12345678");
 
         // True
-        Prescription prescription4 = new Prescription("1234", "123456789012345",
+        Prescription prescription4 = new Prescription("addPrescription",
+                "TestDate4",
                 "12345678901234567890",
                 -20.00, -4.00, 0, "31/01/24", "12345678");
 
         // True
-        Prescription prescription5 = new Prescription("1234", "123456789012345",
+        Prescription prescription5 = new Prescription("addPrescription",
+                "TestDate5",
                 "12345678901234567890",
-                -20.00, -4.00, 0, "1/10/25", "12345678");
+                -20.00, -4.00, 0, "01/10/25", "12345678");
 
         assertFalse(prescription1.addPrescription());
         assertFalse(prescription2.addPrescription());
@@ -234,25 +251,30 @@ public class addPrescriptionTest {
         assertTrue(prescription5.addPrescription());
     }
 
+    // Testing optometrist name
     @Test
     public void addPrescriptionTestOptometrist() {
         // False, optometrist name is less than 8 characters
-        Prescription prescription1 = new Prescription("1234", "123456789012345",
+        Prescription prescription1 = new Prescription("addPrescription",
+                "Optometrist1",
                 "12345678901234567890",
                 -20.00, -4.00, 0, "21/10/25", "1234567");
 
         // False, optometrist name is longer than 25 characters
-        Prescription prescription2 = new Prescription("1234", "123456789012345",
+        Prescription prescription2 = new Prescription("addPrescription",
+                "Optometrist2",
                 "12345678901234567890",
                 -20.00, -4.00, 0, "21/10/25", "12345678901234567890123456");
 
         // True
-        Prescription prescription3 = new Prescription("1234", "123456789012345",
+        Prescription prescription3 = new Prescription("addPrescription",
+                "Optometrist3",
                 "12345678901234567890",
                 -20.00, -4.00, 0, "21/10/25", "12345678");
 
         // True
-        Prescription prescription4 = new Prescription("1234", "123456789012345",
+        Prescription prescription4 = new Prescription("addPrescription",
+                "Optometrist4",
                 "12345678901234567890",
                 -20.00, -4.00, 0, "21/10/25", "1234567890123456789012345");
 
